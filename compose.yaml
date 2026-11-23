@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: 'postgres:17'
+    container_name: 'postgres-17-local'
+    environment:
+      - 'POSTGRES_DB=lawyersite'
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=root'
+    ports:
+      - '5433:5432'
+    volumes:
+      - lawyersite:/var/lib/postgresql/data
+
+volumes:
+  lawyersite:
